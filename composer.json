@@ -5,8 +5,8 @@
     "require": {
         "symfony/framework-bundle": "^4.0",
         "helios-ag/fm-elfinder-bundle": "^9.0",
-        "liz/flysystem-qiniu": "^1.2",
-        "liz/flysystem-aliyun": "^1.1"
+        "liz/flysystem-qiniu": "^1.0",
+        "liz/flysystem-aliyun": "^1.0"
     },
     "license": "MIT",
     "authors": [
