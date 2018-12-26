@@ -1,0 +1,23 @@
+{
+    "name": "liz/elfinder-extension-bundle",
+    "description": "A simple elfinder extension bundle ",
+    "type": "symfony-bundle",
+    "require": {
+        "symfony/framework-bundle": "^4.0",
+        "helios-ag/fm-elfinder-bundle": "^9.0",
+        "liz/flysystem-qiniu": "^1.2",
+        "liz/flysystem-aliyun": "^1.1"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liz in company",
+            "email": "396635210@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Liz\\ElfinderExtensionBundle\\": "src"
+        }
+    }
+}
