@@ -7,7 +7,7 @@
 
     <services>
 
-        <service id="liz.fly_system_adapter.ali_yun"
+        <service id="Liz\ElfinderExtensionBundle\FlySystemCustom\Adapter\AliYunOssAdapter"
                  class="Liz\ElfinderExtensionBundle\FlySystemCustom\Adapter\AliYunOssAdapter"
                  autowire="true"
                  public="true"
@@ -18,7 +18,7 @@
             <argument></argument>
         </service>
 
-        <service id="liz.fly_system_adapter.qiniu"
+        <service id="Liz\ElfinderExtensionBundle\FlySystemCustom\Adapter\QiNiuOssAdapter"
                  class="Liz\ElfinderExtensionBundle\FlySystemCustom\Adapter\QiNiuOssAdapter"
                  autowire="true"
                  public="true"
@@ -29,5 +29,24 @@
             <argument></argument>
         </service>
 
+        <service id="Liz\ElfinderExtensionBundle\FlySystemCustom\Plugins\QiNiuTransCoder"
+                 class="Liz\ElfinderExtensionBundle\FlySystemCustom\Plugins\QiNiuTransCoder"
+                 autowire="true"
+                 public="false"
+        >
+            <argument></argument>
+            <argument></argument>
+            <argument></argument>
+            <argument></argument>
+        </service>
+
+        <service id="Liz\ElfinderExtensionBundle\FlySystemCustom\QiNiu"
+                 class="Liz\ElfinderExtensionBundle\FlySystemCustom\QiNiu"
+                 autowire="true"
+                 public="true"
+        >
+            <argument id="Liz\ElfinderExtensionBundle\FlySystemCustom\Adapter\QiNiuOssAdapter" />
+            <argument id="Liz\ElfinderExtensionBundle\FlySystemCustom\Plugins\QiNiuTransCoder" />
+        </service>
     </services>
 </container>

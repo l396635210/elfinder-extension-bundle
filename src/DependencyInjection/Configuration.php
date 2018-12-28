@@ -3,18 +3,16 @@
  * Created by PhpStorm.
  * User: dljy-technology
  * Date: 2018/12/18
- * Time: 下午5:15
+ * Time: 下午5:15.
  */
 
 namespace Liz\ElfinderExtensionBundle\DependencyInjection;
-
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
-
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
@@ -35,14 +33,19 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('secret_key')->end()
                         ->scalarNode('bucket')->end()
                         ->scalarNode('cdn_host')->end()
+                        ->arrayNode('trans_coder')
+                            ->children()
+                                ->scalarNode('notify_url')->defaultNull()->end()
+                                ->scalarNode('pipe_line')->defaultNull()->end()
+                                ->scalarNode('to_bucket')->defaultNull()->end()
+                                ->scalarNode('wm_image')->defaultNull()->end()
+                            ->end()
+                        ->end()
                     ->end()
                 ->end()
             ->end()
         ;
 
         return $treeBuilder;
-
     }
-
-
 }

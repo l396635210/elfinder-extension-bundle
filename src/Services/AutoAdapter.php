@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: dljy-technology
  * Date: 2018/12/18
- * Time: 下午6:38
+ * Time: 下午6:38.
  */
 
 namespace Liz\ElfinderExtensionBundle\Services;
@@ -14,7 +14,6 @@ use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInt
 
 class AutoAdapter
 {
-
     protected $tokenStorage;
 
     protected $adapter;
@@ -31,14 +30,15 @@ class AutoAdapter
         $user = $tokenStorage->getToken()->getUser();
         $this->aliYunOssAdapter = $aliYunOssAdapter;
         $this->qiNiuOssAdapter = $qiNiuOssAdapter;
-        if (method_exists($user, 'getFlySystemAdapter')){
+        if (method_exists($user, 'getFlySystemAdapter')) {
             $defaultAdapter = $user->getFlySystemAdapter();
         }
         $this->setAdapter($defaultAdapter);
     }
 
-    protected function setAdapter($name){
-        switch ($name){
+    protected function setAdapter($name)
+    {
+        switch ($name) {
             case 'aliyun':
                 $this->adapter = $this->aliYunOssAdapter;
                 break;
@@ -53,5 +53,4 @@ class AutoAdapter
         $result = call_user_func_array([$this->adapter, $name], $arguments);
         return $result;
     }
-
 }

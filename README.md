@@ -18,6 +18,7 @@ return [
 
 ```
 ### Step 3: config example
+in the path `liz_elfinder_extension.yaml`
 #### 3.1 aliyun_adapter config
 ```yaml
 liz_elfinder_extension:
@@ -58,6 +59,11 @@ liz_elfinder_extension:
         secret_key: 'qiniu_secret_key'
         bucket: 'bucket'
         cdn_host: 'cdn.host.com'
+        trans_coder:
+            pipe_line: 'first'
+            notify_url: 'url'
+            wm_image: 'image_path'
+            to_bucket: 'to_bucket'
 ```
 
 enable to elfinder bundle
