@@ -47,7 +47,7 @@ fm_elfinder:
                         path: 'bucket'
                         flysystem:
                             type: custom
-                            adapter_service: liz.fly_system_adapter.ali_yun
+                            adapter_service: Liz\ElfinderExtensionBundle\FlySystemCustom\Adapter\AliYunOssAdapter
                             options: ~
                         upload_allow: ['all']
 ```
@@ -83,7 +83,7 @@ fm_elfinder:
                         path: 'bucket'
                         flysystem:
                             type: custom
-                            adapter_service: liz.fly_system_adapter.qiniu
+                            adapter_service: Liz\ElfinderExtensionBundle\FlySystemCustom\Adapter\QiNiuOssAdapter
                             options: ~
                         upload_allow: ['all']
 
